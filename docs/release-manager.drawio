@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-25T18:44:12.991Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="zghGkyYawZP26mEv_t44" version="22.1.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-11-25T19:01:36.195Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="Wajwbyaekz4_eK4NFjx6" version="22.1.4" type="github" pages="3">
   <diagram name="Business" id="dzs-5oHj5AphAL6cpdhJ">
     <mxGraphModel dx="2903" dy="1352" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -374,18 +374,18 @@
     </mxGraphModel>
   </diagram>
   <diagram id="yV7DOxl5ZKo1QjZJ1ELq" name="Release Version FUP">
-    <mxGraphModel dx="1902" dy="971" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3531" dy="1438" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="aszMP6AXRWz81Q7aNIXq-1" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#F8F9FA;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#212529;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;" vertex="1" parent="1">
-          <mxGeometry x="-340" y="-259" width="1018" height="555" as="geometry" />
+        <mxCell id="aszMP6AXRWz81Q7aNIXq-1" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#6C767D;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#212529;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;recursiveResize=0;" vertex="1" parent="1">
+          <mxGeometry x="-340" y="-259" width="1018" height="696" as="geometry" />
         </mxCell>
-        <mxCell id="aszMP6AXRWz81Q7aNIXq-2" value="Release Version Folow-up" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#F7F7F7;strokeColor=#F8F9FA;fontColor=#6C767D;resizeWidth=1;fontSize=18;align=left;spacing=20;" vertex="1" parent="aszMP6AXRWz81Q7aNIXq-1">
+        <mxCell id="aszMP6AXRWz81Q7aNIXq-2" value="Release Version Folow-up" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#F7F7F7;strokeColor=#6C767D;fontColor=#6C767D;resizeWidth=1;fontSize=18;align=left;spacing=20;" vertex="1" parent="aszMP6AXRWz81Q7aNIXq-1">
           <mxGeometry width="1018" height="50" relative="1" as="geometry" />
         </mxCell>
         <mxCell id="1eMtjxULQF2DnBedk9p9-16" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#6C767D;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#6C767D;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;recursiveResize=0;" vertex="1" parent="aszMP6AXRWz81Q7aNIXq-1">
-          <mxGeometry x="19" y="66" width="412" height="249" as="geometry" />
+          <mxGeometry x="54" y="63" width="412" height="249" as="geometry" />
         </mxCell>
         <mxCell id="1eMtjxULQF2DnBedk9p9-17" value="Success Install by Product" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#F7F7F7;strokeColor=#6C767D;fontColor=#6C767D;resizeWidth=1;fontSize=18;align=left;spacing=20;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-16">
           <mxGeometry width="412" height="50" relative="1" as="geometry" />
@@ -422,6 +422,67 @@
         </mxCell>
         <mxCell id="1eMtjxULQF2DnBedk9p9-20" value="10 days since the first release" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-16">
           <mxGeometry x="225" y="188" width="173" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-21" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#6C767D;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#212529;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;" vertex="1" parent="aszMP6AXRWz81Q7aNIXq-1">
+          <mxGeometry x="511" y="65" width="467" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-22" value="Customers Currently Installing" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#F7F7F7;strokeColor=#6C767D;fontColor=#6C767D;resizeWidth=1;fontSize=18;align=left;spacing=20;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-21">
+          <mxGeometry width="467" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-24" value="Customer F: Waiting since 25/Out/2023 12:00am&lt;br&gt;(30 days from now)" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#B20000;strokeWidth=1;fillColor=#DB2843;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=10;fontSize=14;fontColor=#ffffff;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-21">
+          <mxGeometry x="13" y="83" width="392" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-25" value="Customer Z: Waiting since 25/Nov/2023 2:00pm&lt;br&gt;(2 hours ago)" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#005700;strokeWidth=1;fillColor=#33A64C;fontColor=#ffffff;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=10;fontSize=14;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-21">
+          <mxGeometry x="13" y="123" width="392" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-80" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#DB2843;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#DB2843;verticalAlign=bottom;align=left;spacing=20;spacingBottom=0;fontSize=14;recursiveResize=0;" vertex="1" parent="aszMP6AXRWz81Q7aNIXq-1">
+          <mxGeometry x="54" y="336" width="413" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-81" value="Installation Fails" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.topButton;rSize=5;perimeter=none;whiteSpace=wrap;fillColor=#F7F7F7;strokeColor=#DB2843;fontColor=#6C767D;resizeWidth=1;fontSize=18;align=left;spacing=20;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-80">
+          <mxGeometry width="413" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-82" value="Customer G fail: 24/Nov/2023 01:00pm" style="text;html=1;strokeColor=#DB2843;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontColor=#DB2843;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-80">
+          <mxGeometry x="17" y="66" width="233" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-83" value="See Details" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=none;strokeWidth=1;fillColor=#DB2843;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=10;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-80">
+          <mxGeometry x="267" y="70.5" width="95" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-84" value="See Details" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;strokeColor=none;strokeWidth=1;fillColor=#DB2843;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=10;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-80">
+          <mxGeometry x="267" y="111.5" width="95" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-85" value="Customer S fail: 22/Nov/2023 03:00pm" style="text;html=1;strokeColor=#DB2843;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontColor=#DB2843;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-80">
+          <mxGeometry x="17" y="107" width="233" height="29" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-87" value="Installation Fail Details" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;html=1;strokeColor=#C8C8C8;fillColor=#ffffff;whiteSpace=wrap;verticalAlign=top;align=left;fontSize=18;spacing=15;spacingTop=-5;" vertex="1" parent="1">
+          <mxGeometry x="-784" y="68" width="400" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-88" value="" style="shape=line;strokeColor=#dddddd;resizeWidth=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry width="400" height="10" relative="1" as="geometry">
+            <mxPoint y="50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-89" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.x;strokeColor=#868686;strokeWidth=2;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry x="1" width="8" height="8" relative="1" as="geometry">
+            <mxPoint x="-24" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-90" value="Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;br&gt;&lt;br&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;br&gt;&lt;br&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.&lt;br&gt;&lt;br&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;br&gt;&lt;br&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor." style="strokeColor=none;fillColor=none;resizeWidth=1;align=left;verticalAlign=top;spacing=10;fontSize=14;whiteSpace=wrap;html=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry width="400" height="350" relative="1" as="geometry">
+            <mxPoint y="60" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-91" value="" style="shape=line;strokeColor=#dddddd;resizeWidth=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry width="410" height="10" relative="1" as="geometry">
+            <mxPoint y="420" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-93" value="Close" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;fillColor=#6C757D;strokeColor=none;fontColor=#FFFFFF;fontSize=14;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry x="1" y="1" width="70" height="40" relative="1" as="geometry">
+            <mxPoint x="-235" y="-59" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1eMtjxULQF2DnBedk9p9-94" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="1" source="1eMtjxULQF2DnBedk9p9-85" target="1eMtjxULQF2DnBedk9p9-87">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
