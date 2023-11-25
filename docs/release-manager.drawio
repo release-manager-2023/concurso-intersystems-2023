@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-25T19:17:55.845Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="CxFNZNvEEZCTlXuJqGYg" version="22.1.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-11-25T19:24:03.234Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="FW66SaeLULa2eZCywdeX" version="22.1.4" type="github" pages="3">
   <diagram name="Business" id="dzs-5oHj5AphAL6cpdhJ">
     <mxGraphModel dx="2903" dy="1352" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -374,7 +374,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="yV7DOxl5ZKo1QjZJ1ELq" name="Release Version FUP">
-    <mxGraphModel dx="3111" dy="1278" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2381" dy="1001" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -525,8 +525,8 @@
             <mxPoint x="-202.75502008032117" y="213" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1eMtjxULQF2DnBedk9p9-118" value="Installation Fail Details" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;html=1;strokeColor=#C8C8C8;fillColor=#ffffff;whiteSpace=wrap;verticalAlign=top;align=left;fontSize=18;spacing=15;spacingTop=-5;" vertex="1" parent="1">
-          <mxGeometry x="-774" y="78" width="400" height="510" as="geometry" />
+        <mxCell id="1eMtjxULQF2DnBedk9p9-118" value="Median download time outliers" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;html=1;strokeColor=#C8C8C8;fillColor=#ffffff;whiteSpace=wrap;verticalAlign=top;align=left;fontSize=18;spacing=15;spacingTop=-5;" vertex="1" parent="1">
+          <mxGeometry x="730" y="7" width="400" height="510" as="geometry" />
         </mxCell>
         <mxCell id="1eMtjxULQF2DnBedk9p9-119" value="" style="shape=line;strokeColor=#dddddd;resizeWidth=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-118">
           <mxGeometry width="400" height="10" relative="1" as="geometry">
@@ -536,11 +536,6 @@
         <mxCell id="1eMtjxULQF2DnBedk9p9-120" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.x;strokeColor=#868686;strokeWidth=2;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-118">
           <mxGeometry x="1" width="8" height="8" relative="1" as="geometry">
             <mxPoint x="-24" y="20" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1eMtjxULQF2DnBedk9p9-121" value="Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;br&gt;&lt;br&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;br&gt;&lt;br&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.&lt;br&gt;&lt;br&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;br&gt;&lt;br&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor." style="strokeColor=none;fillColor=none;resizeWidth=1;align=left;verticalAlign=top;spacing=10;fontSize=14;whiteSpace=wrap;html=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-118">
-          <mxGeometry width="400" height="350" relative="1" as="geometry">
-            <mxPoint y="60" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="1eMtjxULQF2DnBedk9p9-122" value="" style="shape=line;strokeColor=#dddddd;resizeWidth=1;" vertex="1" parent="1eMtjxULQF2DnBedk9p9-118">
