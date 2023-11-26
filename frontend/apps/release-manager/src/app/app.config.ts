@@ -50,6 +50,11 @@ export const appConfig: ApplicationConfig = {
           path: 'profile',
           loadChildren: () => import('@realworld/profile/feature-profile').then((profile) => profile.PROFILE_ROUTES),
         },
+        {
+          path: 'stakeholder',
+          loadChildren: () => import('@realworld/stakeholder-list').then((stakeholder) => stakeholder.STAKEHOLDER_LIST_ROUTES),
+          canActivate: [authGuard],
+        }
       ],
       withViewTransitions(),
     ),
