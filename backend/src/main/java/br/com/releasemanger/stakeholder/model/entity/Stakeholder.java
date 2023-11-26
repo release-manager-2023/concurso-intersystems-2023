@@ -28,12 +28,16 @@ public class Stakeholder extends PanacheEntityBase {
 	@GeneratedValue(generator = "native", strategy = GenerationType.IDENTITY)
 	@EqualsAndHashCode.Include
 	private Long id;
+
 	@NotBlank(message = "Stakenolder name may not be blank")
 	private String name;
+
 	@Column(name = "stakeholder_role")
 	private String stakeholderRole;
+
 	@Email
 	private String email;
+
 	@ManyToMany
 	@JoinTable(schema = "RELEASE_MANAGER", name = "STAKEHOLDER_STATUSVERSION", joinColumns = @JoinColumn(name = "stakeholder_id"), inverseJoinColumns = @JoinColumn(name = "status_version_id"))
 	private List<VersionStatus> versionStatuses;

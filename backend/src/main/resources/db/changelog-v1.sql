@@ -27,3 +27,13 @@ create table if not exists RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION (
   status_version_id bigint not null references RELEASE_MANAGER.VERSION_STATUS(id),
   primary key (stakeholder_id,status_version_id)
 );
+
+--changeset higor:5
+create table if not exists RELEASE_MANAGER.PRODUCT (
+  id bigint not null primary key auto_increment,
+  name varchar(60) not null,
+  major_version int,
+  minor_version int,
+  patch_version int,
+  revision_version int
+);
