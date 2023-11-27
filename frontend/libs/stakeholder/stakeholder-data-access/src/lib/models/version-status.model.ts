@@ -1,4 +1,4 @@
 export interface VersionStatus {
-    id:BigInteger;
+    id:number;
     name:String;
 }

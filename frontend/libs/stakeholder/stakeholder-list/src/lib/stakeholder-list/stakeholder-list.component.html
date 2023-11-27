@@ -4,17 +4,17 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Status version</th>
+                    <th>Version Status</th>
                     <th>Role</th>
                     <th>Email</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Cesar</td>
-                    <td>Canary</td>
-                    <td>Administrador do Sistema</td>
-                    <td>{{'cesarcruz.ti@gmail.com'}}</td>
+                <tr *ngFor="let stakeholder of stakeholders">
+                    <td>{{stakeholder.name}}</td>
+                    <td>{{versionStatus(stakeholder.versionStatuses)}}</td>
+                    <td>{{stakeholder.stakeholder_role}}</td>
+                    <td>{{stakeholder.email}}</td>
                 </tr>
             </tbody>
         </table>

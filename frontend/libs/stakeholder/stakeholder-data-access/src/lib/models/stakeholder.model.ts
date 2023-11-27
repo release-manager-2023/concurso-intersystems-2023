@@ -1,7 +1,7 @@
-import { VersionStatus } from "./version-status";
+import { VersionStatus } from "./version-status.model";
 
 export interface Stakeholder {
-    id:BigInteger;
+    id:number;
     name:String;
     stakeholder_role:String;
     email:String;
