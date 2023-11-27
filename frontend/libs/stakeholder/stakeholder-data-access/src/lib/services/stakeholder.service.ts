@@ -10,4 +10,8 @@ export class StakeholderService {
   listStakeholders(): Observable<Stakeholder[]> {
     return this.apiService.get<Stakeholder[]>('/stakeholder');
   }
+
+  register(stakeholder: Stakeholder): Observable<Stakeholder> {
+    return this.apiService.post<Stakeholder, Stakeholder>('/stakeholder', stakeholder);
+  }
 }

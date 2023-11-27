@@ -54,6 +54,11 @@ export const appConfig: ApplicationConfig = {
           path: 'stakeholder',
           loadChildren: () => import('@realworld/stakeholder-list').then((stakeholder) => stakeholder.STAKEHOLDER_LIST_ROUTES),
           canActivate: [authGuard],
+        },
+        {
+          path: 'stakeholder-form',
+          loadChildren: () => import('@realworld/stakeholder-form').then((stakeholder) => stakeholder.STAKEHOLDER_FORM_ROUTES),
+          canActivate: [authGuard],
         }
       ],
       withViewTransitions(),

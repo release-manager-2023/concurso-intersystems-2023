@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Stakeholder, StakeholderService, VersionStatus } from '@realworld/stakeholder/stakeholder-data-access/src';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'lib-stakeholder-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './stakeholder-list.component.html',
   styleUrls: ['./stakeholder-list.component.css'],
 })

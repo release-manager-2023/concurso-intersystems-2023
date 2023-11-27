@@ -1,4 +1,8 @@
 <div class="container page">
+    <h1 class="text-xs-center">Stakeholders</h1>
+        <p class="text-xs-center">
+          <a [routerLink]="['/stakeholder-form']">Register a new</a>
+    </p>
     <div class="row">
         <table id="stakeholder-list" class="table table-striped" style="width:100%">
             <thead>
@@ -13,7 +17,7 @@
                 <tr *ngFor="let stakeholder of stakeholders">
                     <td>{{stakeholder.name}}</td>
                     <td>{{versionStatus(stakeholder.versionStatuses)}}</td>
-                    <td>{{stakeholder.stakeholder_role}}</td>
+                    <td>{{stakeholder.stakeholderRole}}</td>
                     <td>{{stakeholder.email}}</td>
                 </tr>
             </tbody>

@@ -36,7 +36,7 @@
       "@realworld/stakeholder-form": ["libs/stakeholder/stakeholder-form/src/index.ts"],
       "@realworld/stakeholder-list": ["libs/stakeholder/stakeholder-list/src/index.ts"],
       "@realworld/ui/components": ["libs/ui/components/src/index.ts"],
-      "stakeholder-data-access": ["libs/stakeholder/stakeholder-data-access/src/index.ts"]
+      "@realworld/stakeholder-data-access": ["libs/stakeholder/stakeholder-data-access/src/index.ts"]
     },
     "strict": true
   },

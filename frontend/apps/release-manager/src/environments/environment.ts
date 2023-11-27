@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   //api_url: "https://api.realworld.io/api"
-   api_url: 'https://api.mockfly.dev/mocks/b90453b8-608e-4e6b-a213-d58d3b9e47a3',
+   api_url: 'http://localhost:8080',
 };

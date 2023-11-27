@@ -3,7 +3,7 @@ import { VersionStatus } from "./version-status.model";
 export interface Stakeholder {
     id:number;
     name:String;
-    stakeholder_role:String;
+    stakeholderRole:String;
     email:String;
     versionStatuses:VersionStatus[];
-  }
+}
