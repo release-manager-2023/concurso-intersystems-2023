@@ -89,3 +89,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Draw.io
+*.dtmp
+*.bkp
