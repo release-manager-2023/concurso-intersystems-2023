@@ -2,6 +2,8 @@
 
 Submitted to InterSystems Java Contest 2023
 
+InterSystems [IRIS](https://www.intersystems.com/data-platform/) is a high-performance database that powers transaction processing applications around the world.
+
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
@@ -22,7 +24,20 @@ If you need to use another password, you can provide it on the property `quarkus
 
 ## Running the application in dev mode
 
+### Prepare dependencies
+
+InterSystems Java technologies are not available on Maven Central, so you need to grab JDBC connectors and other jar files from https://intersystems-community.github.io/iris-driver-distribution/.
+
+This project contains the jar files at `src/main/resources/lib`.
+
+In order to build this project, go to the `Backend` root folder and type:
+
+```shell script
+mvn install:install-file -Dfile=${PWD}/src/main/resources/lib/intersystems-jdbc-3.7.1.jar -DgroupId=com.intersystems -DartifactId=intersystems-jdbc -Dversion=3.7.1 -Dpackaging=jar
+```
+
 You can run your application in dev mode that enables live coding using:
+
 ```shell script
 ./mvnw compile quarkus:dev
 ```

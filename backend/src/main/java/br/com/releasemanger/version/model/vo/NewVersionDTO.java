@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Builder;
 
 @Builder
-public record NewVersionResponseDTO(
+public record NewVersionDTO(
 		String version,
 		String location,
 		LocalDateTime timestamp) {

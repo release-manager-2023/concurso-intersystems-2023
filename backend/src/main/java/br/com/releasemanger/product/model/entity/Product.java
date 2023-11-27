@@ -1,5 +1,6 @@
 package br.com.releasemanger.product.model.entity;
 
+import br.com.releasemanger.version.model.vo.VersionString;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,4 +37,9 @@ public class Product extends PanacheEntityBase {
 
 	@Column(name = "REVISION_VERSION")
 	private Integer revisionVersion;
+
+	public String getVersionString() {
+		return VersionString.formatVersion(this.getMajorVersion(), this.getMinorVersion(), this.getPatchVersion(),
+				this.getRevisionVersion());
+	}
 }

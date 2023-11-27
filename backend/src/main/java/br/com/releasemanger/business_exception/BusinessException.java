@@ -1,4 +1,4 @@
-package br.com.releasemanger.common;
+package br.com.releasemanger.business_exception;
 
 public class BusinessException extends RuntimeException {
 

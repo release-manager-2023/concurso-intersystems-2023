@@ -7,6 +7,7 @@ public class VersionLabelStrategyPatch implements VersionLabelStrategy {
 	@Override
 	public void setNewVersion(Product product) {
 		product.setPatchVersion(product.getPatchVersion() + 1);
+		product.setRevisionVersion(0);
 	}
 
 }
