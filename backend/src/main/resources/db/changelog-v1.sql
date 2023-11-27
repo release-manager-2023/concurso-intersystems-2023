@@ -62,4 +62,3 @@ create table if not exists RELEASE_MANAGER.VERSION (
   patch_version int,
   revision_version int
 );
-

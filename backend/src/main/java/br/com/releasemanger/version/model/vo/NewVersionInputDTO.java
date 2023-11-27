@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PublishNewVersionDTO {
+public class NewVersionInputDTO {
 
 	@FormParam("username")
 	private String username;

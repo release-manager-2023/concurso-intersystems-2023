@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import br.com.releasemanger.version.model.entity.Version;
-import br.com.releasemanger.version.model.vo.PublishNewVersionDTO;
+import br.com.releasemanger.version.model.vo.NewVersionInputDTO;
 import br.com.releasemanger.version.service.VersionService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -29,7 +29,7 @@ public class VersionResource {
 
 	@POST
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
-	public Response upload(PublishNewVersionDTO newVersionDTO) throws IOException {
+	public Response upload(NewVersionInputDTO newVersionDTO) throws IOException {
 		return Response.ok(this.versionService.publishNewVersion(newVersionDTO))
 				.build();
 	}
