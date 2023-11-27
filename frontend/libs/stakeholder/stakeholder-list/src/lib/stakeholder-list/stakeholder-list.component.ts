@@ -8,4 +8,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './stakeholder-list.component.html',
   styleUrls: ['./stakeholder-list.component.css'],
 })
-export class StakeholderListComponent {}
+export class StakeholderListComponent {
+
+ stakeholders:Stakeholder[];
+
+
+  ngOnInit(){
+    new DataTable('#stakeholder-list');
+  }
+}
