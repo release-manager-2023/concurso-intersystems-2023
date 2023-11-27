@@ -11,13 +11,7 @@ import { Stakeholder, StakeholderService, VersionStatus } from '@realworld/stake
 })
 export class StakeholderListComponent {
 
-  stakeholders: Stakeholder[] = [{
-    name: "Cesar",
-    email: "cesarcruz.ti@gmail.com",
-    stakeholder_role: "Administrador de sistemas",
-    versionStatuses: [{ id: 1, name: "Canary" }, { id: 2, name: "Internal" }],
-    id: 1
-  }];
+  stakeholders: Stakeholder[] = [];
 
   constructor(private service:StakeholderService){
 

@@ -8,6 +8,6 @@ export class StakeholderService {
   private readonly apiService = inject(ApiService);
 
   listStakeholders(): Observable<Stakeholder[]> {
-    return this.apiService.get<Stakeholder[]>('/stakeholder/');
+    return this.apiService.get<Stakeholder[]>('/stakeholder');
   }
 }
