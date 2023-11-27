@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Stakeholder, StakeholderService, VersionStatus } from '@realworld/stakeholder/stakeholder-data-access/src';
 
 @Component({
   selector: 'lib-stakeholder-list',
@@ -10,10 +11,25 @@ import { CommonModule } from '@angular/common';
 })
 export class StakeholderListComponent {
 
- stakeholders:Stakeholder[];
+  stakeholders: Stakeholder[] = [{
+    name: "Cesar",
+    email: "cesarcruz.ti@gmail.com",
+    stakeholder_role: "Administrador de sistemas",
+    versionStatuses: [{ id: 1, name: "Canary" }, { id: 2, name: "Internal" }],
+    id: 1
+  }];
 
+  constructor(private service:StakeholderService){
 
-  ngOnInit(){
-    new DataTable('#stakeholder-list');
+  }
+
+  ngOnInit() {
+    this.service.listStakeholders().subscribe(list=>{
+      this.stakeholders = list;
+    })
+  }
+
+  versionStatus(versionStatuses:VersionStatus[]){
+    return versionStatuses.map(objeto => objeto.name).join(', ');
   }
 }
