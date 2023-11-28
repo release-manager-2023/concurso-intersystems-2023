@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import br.com.releasemanger.version.model.entity.Version;
 import br.com.releasemanger.version.model.vo.ChangeVersionDTO;
 import br.com.releasemanger.version.model.vo.NewVersionInputDTO;
+import br.com.releasemanger.version.model.vo.VersionDTO;
 import br.com.releasemanger.version.service.VersionService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -36,7 +36,7 @@ public class VersionResource {
 	 */
 	@Path("versions")
 	@GET
-	public List<Version> getProductVersions(@PathParam("product-id") Long productId) {
+	public List<VersionDTO> getProductVersions(@PathParam("product-id") Long productId) {
 		return versionService.getVersionsByProduct(productId);
 	}
 
@@ -47,10 +47,11 @@ public class VersionResource {
 	 * @param versionId
 	 * @return
 	 */
-	@Path("{versionId}/artifact")
+	@Path("versions/{versionId}/artifact")
 	@GET
 	@Produces(MediaType.APPLICATION_OCTET_STREAM)
-	public File downloadVersion(@PathParam("versionId") Long versionId) {
+	public File downloadVersion(@PathParam("product-id") Long productId,
+			@PathParam("versionId") Long versionId) {
 		return versionService.getFile(versionId);
 	}
 

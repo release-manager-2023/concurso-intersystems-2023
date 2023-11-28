@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
@@ -20,16 +21,19 @@ import br.com.releasemanger.version.model.exceptions.MajorVersionCantBePublished
 import br.com.releasemanger.version.model.vo.ChangeVersionDTO;
 import br.com.releasemanger.version.model.vo.NewVersionInputDTO;
 import br.com.releasemanger.version.model.vo.NewVersionOutputDTO;
+import br.com.releasemanger.version.model.vo.VersionDTO;
 import br.com.releasemanger.version.model.vo.VersionLabel;
 import io.vertx.core.eventbus.EventBus;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.HttpHeaders;
 
 @Dependent
 public class VersionService {
 
-	private static final String DOWNLOAD_URL = "https://release-manager.io/products/%d/versions/%d";
+	private static final String DOWNLOAD_URL = "http://%s/products/%d/versions/%d/artifact";
 
 	@ConfigProperty(name = "release_manager.file_root_path")
 	private String fileRootPath;
@@ -39,6 +43,9 @@ public class VersionService {
 
 	@Inject
 	private UsernameFaker usernameFaker;
+
+	@Context
+	private HttpHeaders httpHeaders;
 
 	public List<Version> listAllVersions() {
 		return Version.listAll();
@@ -89,7 +96,8 @@ public class VersionService {
 		return NewVersionOutputDTO.builder()
 				.versionId(version.getId())
 				.versionString(version.getVersionString())
-				.location(DOWNLOAD_URL.formatted(version.getProductId(), version.getId()))
+				.location(DOWNLOAD_URL.formatted(httpHeaders.getHeaderString(HttpHeaders.HOST), version.getProductId(),
+						version.getId()))
 				.timestamp(version.getVersionCreatedTimestamp())
 				.build();
 	}
@@ -143,7 +151,23 @@ public class VersionService {
 		return Version.findById(versionId);
 	}
 
-	public List<Version> getVersionsByProduct(Long productId) {
-		return Version.list("productId = ?1", productId);
+	public List<VersionDTO> getVersionsByProduct(Long productId) {
+		List<Version> queryResult = Version.list("productId = ?1", productId);
+		List<VersionDTO> dtoList = queryResult.stream().map(version -> this.buildVersionDTO(version))
+				.collect(Collectors.toList());
+		return dtoList;
+	}
+
+	private VersionDTO buildVersionDTO(Version version) {
+		return VersionDTO.builder()
+				.id(version.getId())
+				.versionStatus(version.getVersionStatus())
+				.versionCreatedTimestamp(version.getVersionCreatedTimestamp())
+				.version(version.getVersionString())
+				.releaseNotes(version.getReleaseNotes())
+				.prerequisite(version.getPrerequisite())
+				.artifact(DOWNLOAD_URL.formatted(httpHeaders.getHeaderString(HttpHeaders.HOST), version.getProductId(),
+						version.getId()))
+				.build();
 	}
 }
