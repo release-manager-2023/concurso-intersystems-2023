@@ -12,9 +12,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class NewVersionInputDTO {
 
-	@FormParam("username")
-	private String username;
-
 	@FormParam("productId")
 	private Long productId;
 

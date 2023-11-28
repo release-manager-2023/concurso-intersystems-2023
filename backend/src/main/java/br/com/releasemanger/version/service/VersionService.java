@@ -18,7 +18,6 @@ import br.com.releasemanger.product.model.entity.Product;
 import br.com.releasemanger.version.model.entity.Version;
 import br.com.releasemanger.version.model.exceptions.MajorVersionCantBePublishedException;
 import br.com.releasemanger.version.model.vo.ChangeVersionDTO;
-import br.com.releasemanger.version.model.vo.DownloadVersion;
 import br.com.releasemanger.version.model.vo.NewVersionInputDTO;
 import br.com.releasemanger.version.model.vo.NewVersionOutputDTO;
 import br.com.releasemanger.version.model.vo.VersionLabel;
@@ -30,13 +29,16 @@ import jakarta.transaction.Transactional;
 @Dependent
 public class VersionService {
 
-	private static final String DOWNLOAD_URL = "https://release-manager.io/product-id/%s/version/%s";
+	private static final String DOWNLOAD_URL = "https://release-manager.io/products/%d/versions/%d";
 
 	@ConfigProperty(name = "release_manager.file_root_path")
 	private String fileRootPath;
 
 	@Inject
 	private EventBus bus;
+
+	@Inject
+	private UsernameFaker usernameFaker;
 
 	public List<Version> listAllVersions() {
 		return Version.listAll();
@@ -62,7 +64,7 @@ public class VersionService {
 	private Version buildVersionEntry(NewVersionInputDTO newVersionDTO, Product product, Path fileVersion) {
 		Version version = Version.builder()
 				.artifactLocation(fileVersion.toAbsolutePath().toString())
-				.username(newVersionDTO.getUsername())
+				.username(usernameFaker.getUsername())
 				.versionCreatedTimestamp(LocalDateTime.now())
 				.productId(product.getId())
 				.build();
@@ -87,7 +89,7 @@ public class VersionService {
 		return NewVersionOutputDTO.builder()
 				.versionId(version.getId())
 				.versionString(version.getVersionString())
-				.location(DOWNLOAD_URL.formatted(version.getProductId(), version.getVersionString()))
+				.location(DOWNLOAD_URL.formatted(version.getProductId(), version.getId()))
 				.timestamp(version.getVersionCreatedTimestamp())
 				.build();
 	}
@@ -132,8 +134,12 @@ public class VersionService {
 		return version;
 	}
 
-	public File getFile(DownloadVersion downloadVersion) {
-		Version version = Version.findById(downloadVersion.versionId());
+	public File getFile(Long versionId) {
+		Version version = this.findVersionById(versionId);
 		return new File(version.getArtifactLocation());
+	}
+
+	public Version findVersionById(Long versionId) {
+		return Version.findById(versionId);
 	}
 }
