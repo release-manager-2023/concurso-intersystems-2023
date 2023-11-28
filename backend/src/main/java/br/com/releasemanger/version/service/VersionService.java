@@ -142,4 +142,8 @@ public class VersionService {
 	public Version findVersionById(Long versionId) {
 		return Version.findById(versionId);
 	}
+
+	public List<Version> getVersionsByProduct(Long productId) {
+		return Version.list("productId = ?1", productId);
+	}
 }

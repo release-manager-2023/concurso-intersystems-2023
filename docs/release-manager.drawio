@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-28T19:01:19.149Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="VA2TbIhdDkDABn_vLayN" version="22.1.2" type="device" pages="4">
+<mxfile host="Electron" modified="2023-11-28T19:59:21.860Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="f7HsGU4ksSlwZHX2PE5X" version="22.1.2" type="device" pages="5">
   <diagram name="Event Storming" id="dzs-5oHj5AphAL6cpdhJ">
-    <mxGraphModel dx="1902" dy="1057" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1652" dy="948" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -236,7 +236,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="j7EpRXvFiZ59s9csTrXY" name="Architectural Solution">
-    <mxGraphModel dx="4155" dy="2043" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1902" dy="1057" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1004,6 +1004,41 @@
           <mxGeometry x="1" y="1" width="70" height="40" relative="1" as="geometry">
             <mxPoint x="-235" y="-59" as="offset" />
           </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="gcZtFg9EuNFVEcV3dQE3" name="Plano">
+    <mxGraphModel dx="1902" dy="1057" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-1" value="Backend" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="53" y="-61" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-2" value="BD" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-84" y="-61" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-3" value="Interoperability" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="-61" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-4" value="Escrita" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327" y="-61" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-5" value="PEX&lt;br&gt;Service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="11" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-6" value="Operation p/&lt;br&gt;Cloud Storage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="85" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-7" value="Artigo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327" y="11" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-8" value="Markdown" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327" y="85" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kO_zxhvp5M1dV8TQQvKQ-9" value="Preenchimento do cadastro no concurso" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="327" y="162" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
