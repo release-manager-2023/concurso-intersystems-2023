@@ -1,5 +1,8 @@
 package br.com.releasemanger.version.service;
 
+import static br.com.releasemanger.version_status.model.vo.VersionStatusNotificationChannel.VERSION_STATUS_NOTIFICATION;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,10 +17,14 @@ import br.com.releasemanger.business_exception.BusinessException;
 import br.com.releasemanger.product.model.entity.Product;
 import br.com.releasemanger.version.model.entity.Version;
 import br.com.releasemanger.version.model.exceptions.MajorVersionCantBePublishedException;
+import br.com.releasemanger.version.model.vo.ChangeVersionDTO;
+import br.com.releasemanger.version.model.vo.DownloadVersion;
 import br.com.releasemanger.version.model.vo.NewVersionInputDTO;
 import br.com.releasemanger.version.model.vo.NewVersionOutputDTO;
 import br.com.releasemanger.version.model.vo.VersionLabel;
+import io.vertx.core.eventbus.EventBus;
 import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
 @Dependent
@@ -27,6 +34,9 @@ public class VersionService {
 
 	@ConfigProperty(name = "release_manager.file_root_path")
 	private String fileRootPath;
+
+	@Inject
+	private EventBus bus;
 
 	public List<Version> listAllVersions() {
 		return Version.listAll();
@@ -41,7 +51,12 @@ public class VersionService {
 		Version version = this.buildVersionEntry(newVersionInputDTO, product, storedFile);
 		product.persist();
 		version.persist();
+		this.publishVersionStatusNotification(version);
 		return this.buildNewVersionOutputDTO(version);
+	}
+
+	private void publishVersionStatusNotification(Version version) {
+		bus.publish(VERSION_STATUS_NOTIFICATION, version);
 	}
 
 	private Version buildVersionEntry(NewVersionInputDTO newVersionDTO, Product product, Path fileVersion) {
@@ -70,7 +85,8 @@ public class VersionService {
 
 	private NewVersionOutputDTO buildNewVersionOutputDTO(Version version) {
 		return NewVersionOutputDTO.builder()
-				.version(version.getVersionString())
+				.versionId(version.getId())
+				.versionString(version.getVersionString())
 				.location(DOWNLOAD_URL.formatted(version.getProductId(), version.getVersionString()))
 				.timestamp(version.getVersionCreatedTimestamp())
 				.build();
@@ -103,5 +119,21 @@ public class VersionService {
 		if (VersionLabel.MAJOR.equals(publishNewVersionDTO.getVersionLabel())) {
 			throw new MajorVersionCantBePublishedException();
 		}
+	}
+
+	@Transactional
+	public Version changeVersion(ChangeVersionDTO changeVersionStatusDTO) {
+		Version version = Version.findById(changeVersionStatusDTO.versionId());
+		version.setVersionStatus(changeVersionStatusDTO.versionStatus());
+		version.setReleaseNotes(changeVersionStatusDTO.releaseNotes());
+		version.setPrerequisite(changeVersionStatusDTO.prerequisite());
+		version.persist();
+		this.publishVersionStatusNotification(version);
+		return version;
+	}
+
+	public File getFile(DownloadVersion downloadVersion) {
+		Version version = Version.findById(downloadVersion.versionId());
+		return new File(version.getArtifactLocation());
 	}
 }

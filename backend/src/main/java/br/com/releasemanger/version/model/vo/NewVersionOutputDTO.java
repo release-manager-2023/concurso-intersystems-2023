@@ -6,7 +6,8 @@ import lombok.Builder;
 
 @Builder
 public record NewVersionOutputDTO(
-		String version,
+		Long versionId,
+		String versionString,
 		String location,
 		LocalDateTime timestamp) {
 

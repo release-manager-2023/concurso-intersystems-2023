@@ -59,6 +59,12 @@ public class Version extends PanacheEntityBase {
 	@Column(name = "revision_version")
 	private Integer revisionVersion;
 
+	@Column(name = "release_notes")
+	private String releaseNotes;
+
+	@Column(name = "prerequisite")
+	private String prerequisite;
+
 	public void setVersionFromProduct(Product product) {
 		this.setMajorVersion(product.getMajorVersion());
 		this.setMinorVersion(product.getMinorVersion());

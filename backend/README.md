@@ -49,7 +49,6 @@ Or you can use [SDK Man](https://sdkman.io/) and just run
 quarkus dev
 ```
 
-
 ## Packaging and running the application in container
 
 The application can be packaged using:
