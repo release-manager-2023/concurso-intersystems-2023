@@ -1,4 +1,4 @@
-<div class="stakeholder-form">
+<!-- <div class="stakeholder-form">
     <div class="container page">
       <div class="row">
         <div class="col-md-6 offset-md-3 col-xs-12">
@@ -15,4 +15,65 @@
       </div>
     </div>
   </div>
+   -->
+   <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 border mt-5 ">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <h1 class="text-xs-center">New Stakeholder</h1>
   
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input [formControlName]="'name'"
+              [ngClass]="{'is-invalid':submitted && registerForm.controls['name'].errors}" type="text"
+              class="form-control">
+              <div *ngIf="submitted && registerForm.controls['name'].errors" class="text-danger">
+                <div *ngIf="submitted && registerForm.controls['name'].errors?.['required']">
+                  Name is required. 
+                </div>
+                <div *ngIf="submitted && registerForm.controls['name'].errors?.minlength">
+                  Name should be at least 8 characters.
+                </div>
+              </div> 
+          </div>
+  
+  
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input [formControlName]="'email'"
+              [ngClass]="{'is-invalid':submitted && registerForm.controls['email'].errors}" type="email"
+              class="form-control">
+              <div *ngIf="submitted && registerForm.controls['email'].errors" class="text-danger">
+                <div *ngIf="submitted && registerForm.controls['email'].errors?.['required']">
+                  Email is required. 
+                </div>
+                <div *ngIf="submitted && registerForm.controls['email'].errors?.email">
+                  Email is not valid.
+                </div>
+              </div> 
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role:</label>
+            <input [formControlName]="'role'"
+              [ngClass]="{'is-invalid':submitted && registerForm.controls['role'].errors}" type="text"
+              class="form-control">
+              <div *ngIf="submitted && registerForm.controls['role'].errors" class="text-danger">
+                <div *ngIf="submitted && registerForm.controls['role'].errors?.['required']">
+                  Role is required.
+                </div>
+                <div *ngIf="submitted && registerForm.controls['role'].errors?.minlength">
+                  Role should be at least 3 characters.
+                </div>
+              </div> 
+          </div>
+  
+          <div class="form-group">
+            <button class="btn btn-primary mt-2 mb-2">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

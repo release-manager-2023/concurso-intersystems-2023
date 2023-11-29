@@ -1,5 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { DynamicFormComponent, Field, formsActions, ListErrorsComponent, ngrxFormsQuery } from '@realworld/core/forms/src';
@@ -30,29 +31,34 @@ const structure: Field[] = [
   standalone: true,
   templateUrl: './stakeholder-form.component.html',
   styleUrls: ['./stakeholder-form.component.css'],
-  imports: [ListErrorsComponent, DynamicFormComponent, RouterModule],
+  imports: [ListErrorsComponent, RouterModule, CommonModule, ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StakeholderFormComponent {
-  private readonly store = inject(Store);
 
-  structure$ = this.store.select(ngrxFormsQuery.selectStructure);
-  data$ = this.store.select(ngrxFormsQuery.selectData);
+  registerForm !: FormGroup
+  title = 'formReractive';
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.store.dispatch(formsActions.setStructure({ structure }));
+    // Validation 
+    this.registerForm = this.formBuilder.group({
+      name: ['', Validators.required, Validators.minLength(8)],
+      email: ['', [Validators.required, Validators.email]],
+      role: ['', [Validators.required, Validators.minLength(3)]]
+    })
   }
 
-  updateForm(changes: any) {
-    this.store.dispatch(formsActions.updateData({ data: changes }));
+  onSubmit() {
+    this.submitted = true
+
+    if (this.registerForm.invalid) {
+      return
+    }
+    alert('success')
   }
 
-  submit() {
-    console.log(this.data$)
-    // this.store.dispatch(stakeholderActions.register());
-  }
 
-  ngOnDestroy() {
-    this.store.dispatch(formsActions.initializeForm());
-  }
 }
