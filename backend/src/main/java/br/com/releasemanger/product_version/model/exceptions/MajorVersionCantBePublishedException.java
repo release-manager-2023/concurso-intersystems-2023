@@ -1,4 +1,4 @@
-package br.com.releasemanger.version.model.exceptions;
+package br.com.releasemanger.product_version.model.exceptions;
 
 import br.com.releasemanger.business_exception.BusinessException;
 

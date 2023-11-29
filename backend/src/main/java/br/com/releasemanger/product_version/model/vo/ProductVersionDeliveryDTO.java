@@ -1,14 +1,15 @@
-package br.com.releasemanger.version.model.vo;
+package br.com.releasemanger.product_version.model.vo;
 
+import java.net.URI;
 import java.time.LocalDateTime;
 
 import lombok.Builder;
 
 @Builder
-public record VersionDTO(
+public record ProductVersionDeliveryDTO(
 		Long id,
 		Long versionStatus,
-		String artifact,
+		URI artifact,
 		LocalDateTime versionCreatedTimestamp,
 		String version,
 		String releaseNotes,

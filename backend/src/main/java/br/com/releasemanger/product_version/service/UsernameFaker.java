@@ -1,4 +1,4 @@
-package br.com.releasemanger.version.service;
+package br.com.releasemanger.product_version.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import net.datafaker.Faker;

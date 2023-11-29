@@ -1,9 +1,9 @@
-package br.com.releasemanger.version.model.entity;
+package br.com.releasemanger.product_version.model.entity;
 
 import java.time.LocalDateTime;
 
 import br.com.releasemanger.product.model.entity.Product;
-import br.com.releasemanger.version.model.vo.VersionString;
+import br.com.releasemanger.version_label.model.vo.VersionLabelStringfy;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,13 +18,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(schema = "RELEASE_MANAGER", name = "VERSION")
+@Table(schema = "RELEASE_MANAGER", name = "PRODUCT_VERSION_DELIVERY")
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Version extends PanacheEntityBase {
+public class ProductVersionDelivery extends PanacheEntityBase {
 
 	@Id
 	@GeneratedValue(generator = "native", strategy = GenerationType.IDENTITY)
@@ -73,7 +73,7 @@ public class Version extends PanacheEntityBase {
 	}
 
 	public String getVersionString() {
-		return VersionString.formatVersion(this.getMajorVersion(), this.getMinorVersion(), this.getPatchVersion(),
+		return VersionLabelStringfy.formatVersion(this.getMajorVersion(), this.getMinorVersion(), this.getPatchVersion(),
 				this.getRevisionVersion());
 	}
 

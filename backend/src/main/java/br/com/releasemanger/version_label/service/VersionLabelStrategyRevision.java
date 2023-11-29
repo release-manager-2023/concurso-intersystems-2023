@@ -1,4 +1,4 @@
-package br.com.releasemanger.version.service;
+package br.com.releasemanger.version_label.service;
 
 import br.com.releasemanger.product.model.entity.Product;
 

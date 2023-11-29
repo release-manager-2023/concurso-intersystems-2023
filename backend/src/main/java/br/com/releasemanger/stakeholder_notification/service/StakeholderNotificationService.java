@@ -4,8 +4,8 @@ import static br.com.releasemanger.version_status.model.vo.VersionStatusNotifica
 
 import java.util.List;
 
+import br.com.releasemanger.product_version.model.entity.ProductVersionDelivery;
 import br.com.releasemanger.stakeholder.model.entity.Stakeholder;
-import br.com.releasemanger.version.model.entity.Version;
 import io.quarkus.vertx.ConsumeEvent;
 import io.smallrye.common.annotation.Blocking;
 import jakarta.enterprise.context.Dependent;
@@ -17,7 +17,7 @@ public class StakeholderNotificationService {
 
 	@ConsumeEvent(VERSION_STATUS_NOTIFICATION)
 	@Blocking
-	public void consume(Version version) {
+	public void consume(ProductVersionDelivery version) {
 		log.info("Version status changed: " + version.getVersionString() + " to " + version.getVersionStatus());
 		List<Stakeholder> stakeholders = Stakeholder.listAll();
 		if (stakeholders.size() == 0) {

@@ -1,6 +1,6 @@
-package br.com.releasemanger.version.model.vo;
+package br.com.releasemanger.version_label.model.vo;
 
-public class VersionString {
+public class VersionLabelStringfy {
 
 	private static final String FORMAT_VERSION = "%d.%d.%d.%d";
 
