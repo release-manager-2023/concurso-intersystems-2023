@@ -2,8 +2,8 @@
 
 --changeset higor:1
 create table if not exists RELEASE_MANAGER.VERSION_STATUS (
- id bigint not null primary key auto_increment,
- name varchar(60) not null
+  id bigint not null primary key auto_increment,
+  name varchar(60) not null
 );
 
 --changeset higor:2
@@ -109,8 +109,14 @@ create table if not exists RELEASE_MANAGER.CUSTOMER (
   current_revision_version int
 );
 
+--changeset higor:6.1
+insert into RELEASE_MANAGER.CUSTOMER 
+(name, custom_customer_id)
+values
+('Laboratory 99900', '99900');
+
 --changeset higor:7
-create table if not exists RELEASE_MANAGER.PRODUCT_VERSION(
+create table if not exists RELEASE_MANAGER.PRODUCT_VERSION_DELIVERY(
   id bigint not null primary key auto_increment,
   product_id bigint references RELEASE_MANAGER.PRODUCT(id) not null,
   version_status_id bigint references RELEASE_MANAGER.VERSION_STATUS(id) not null,
@@ -125,3 +131,36 @@ create table if not exists RELEASE_MANAGER.PRODUCT_VERSION(
   prerequisite text
 );
 
+--changeset higor:8
+create table if not exists RELEASE_MANAGER.DEPLOYMENT_STATUS(
+  id bigint not null primary key auto_increment,
+  name varchar(60) not null
+);
+
+--changeset higor:8.1
+insert into RELEASE_MANAGER.DEPLOYMENT_STATUS (NAME) values ('Download In Progress');
+insert into RELEASE_MANAGER.DEPLOYMENT_STATUS (NAME) values ('Deployment In Progress');
+insert into RELEASE_MANAGER.DEPLOYMENT_STATUS (NAME) values ('Deployment Success');
+insert into RELEASE_MANAGER.DEPLOYMENT_STATUS (NAME) values ('Deployment Fail');
+
+--changeset higor:9
+create table if not exists RELEASE_MANAGER.PRODUCT_VERSION_DEPLOYMENT(
+  id bigint not null primary key auto_increment,
+  product_id bigint references RELEASE_MANAGER.PRODUCT(id) not null,
+  customer_id bigint references RELEASE_MANAGER.CUSTOMER(id) not null,
+  version_id bigint references RELEASE_MANAGER.PRODUCT_VERSION_DELIVERY not null,
+  download_start timestamp default 'now',
+  download_end timestamp,
+  download_time bigint,
+  deployment_start timestamp,
+  deployment_end timestamp,
+  deployment_time bigint,
+  deployment_status bigint references RELEASE_MANAGER.DEPLOYMENT_STATUS(id) not null default 1
+);
+
+--changeset higor:10
+create table if not exists RELEASE_MANAGER.PRODUCT_VERSION_DEPLOYMENT_FAIL_LOG(
+  id bigint not null primary key auto_increment,
+  product_version_deployment_status_id bigint references RELEASE_MANAGER.PRODUCT_VERSION_DEPLOYMENT(id) not null,
+  message text not null
+);
