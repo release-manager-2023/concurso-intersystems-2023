@@ -108,6 +108,31 @@ INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
 (stakeholder_id, status_version_id)
 VALUES(3, 5);
 
+--changeset higor:4.3
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 1);
+
+--changeset higor:4.4
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 2);
+
+--changeset higor:4.5
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 3);
+
+--changeset higor:4.6
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 4);
+
+--changeset higor:4.7
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 5);
+
 --changeset higor:5
 create table if not exists RELEASE_MANAGER.PRODUCT (
   id bigint not null primary key auto_increment,
