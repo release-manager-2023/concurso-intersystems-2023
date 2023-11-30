@@ -36,6 +36,11 @@ INSERT INTO RELEASE_MANAGER.STAKEHOLDER
 (name, stakeholder_role, email)
 VALUES('Cesar Cruz', 'Helpdesk', 'cesar.cruz@shift.com.br');
 
+--changeset higor:3.3
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER
+(name, stakeholder_role, email)
+VALUES('InterSystems Expert', 'Expert', 'expert@intersystems.com');
+
 --changeset higor:4
 create table if not exists RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION (
   stakeholder_id bigint not null references RELEASE_MANAGER.STAKEHOLDER(id),
@@ -57,6 +62,31 @@ VALUES(1, 2);
 INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
 (stakeholder_id, status_version_id)
 VALUES(2, 1);
+
+--changeset higor:4.4
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 2);
+
+--changeset higor:4.5
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 3);
+
+--changeset higor:4.6
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 4);
+
+--changeset higor:4.7
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 5);
+
+--changeset higor:4.3
+INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
+(stakeholder_id, status_version_id)
+VALUES(3, 1);
 
 --changeset higor:4.4
 INSERT INTO RELEASE_MANAGER.STAKEHOLDER_STATUSVERSION
