@@ -20,6 +20,7 @@ AccountName=YOUR_ACCOUNT_NAME
 AccountKey=YOUR_ACCOUNT_KEY
 EndpointSuffix=core.windows.net
 ```
+<img src="./docs/assets/key_access_azure_blob.png" alt="key_access_azure_blob">
 
 2. Open the terminal in this directory and run:
 
