@@ -11,4 +11,4 @@ services:
       - 53773
     volumes:
       - ./:/irisdev/app
-      - ./azureblob:/usr/irissys/mgr/azureblob
+      - ./cloudstoragecredential:/usr/irissys/mgr/cloudstoragecredential

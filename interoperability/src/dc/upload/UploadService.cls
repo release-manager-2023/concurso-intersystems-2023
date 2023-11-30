@@ -49,19 +49,20 @@ Method OnProcessInput(pInput As %GlobalBinaryStream, pOutput As dc.upload.Upload
         //save body message (the file content) to file object
         Do file.CopyFromAndSave(message.Body)
 
-        #; Set adapter=##class(EnsLib.CloudStorage.OutboundAdapter).%New()
-        #; Set adapter.StorageProvider = 1
-        #; Set adapter.EndPoint = "https://releasemanagerblob.blob.core.windows.net"
-        #; Set adapter.ProviderCredentialsFile = "/usr/irissys/mgr/azureblob"
-        #; Do adapter.OnInit()
-        #; Set status = adapter.UploadBlobFromFile("versao",filename,..Folder_filename)
+        Set bucketName = "release/1/2"
+
+        Set adapter=##class(EnsLib.CloudStorage.OutboundAdapter).%New()
+        Set adapter.StorageProvider = 1
+        Set adapter.EndPoint = "https://releasemanagerblob.blob.core.windows.net"
+        Set adapter.ProviderCredentialsFile = "/usr/irissys/mgr/cloudstoragecredential"
+        Do adapter.OnInit()
+        Set status = adapter.UploadBlobFromFile(bucketName,filename,..Folder_filename)
 
         Set uploadResponse=##class(dc.upload.UploadResponse).%New()
-        Set uploadResponse.FileName = filename
-        Set uploadResponse.FilePath = ..Folder_filename  
+        Set uploadResponse.releaseUrl = adapter.EndPoint_"/"_bucketName_"/"_filename
 
-        //return a sucess message to the user/caller
-        #; Set pOutput = "File "_filename_" uploaded with success to: "_..Folder_filename_" status:"_status
+        // return a sucess message to the user/caller
+        // Set pOutput = "File "_filename_" uploaded with success to: "_..Folder_filename_" status:"_pProductId
         Do uploadResponse.%JSONExportToString(.pOutput)
         Set tSC=$$$OK
     

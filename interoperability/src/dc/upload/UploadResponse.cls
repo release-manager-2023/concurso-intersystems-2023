@@ -1,9 +1,7 @@
 Class dc.upload.UploadResponse Extends (%Persistent, %JSON.Adaptor, %Populate)
 {
 
-Property FileName As %String;
-
-Property FilePath As %String;
+Property releaseUrl As %String;
 
 Storage Default
 {
@@ -16,6 +14,12 @@ Storage Default
 </Value>
 <Value name="3">
 <Value>FilePath</Value>
+</Value>
+<Value name="4">
+<Value>releaseURL</Value>
+</Value>
+<Value name="5">
+<Value>releaseUrl</Value>
 </Value>
 </Data>
 <DataLocation>^dc.upload.UploadResponseD</DataLocation>
