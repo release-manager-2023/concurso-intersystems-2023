@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "8e1886af-d347-4f28-8ca3-9b6b10d06079",
+		"name": "ReleaseManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24380608",
+		"_collection_link": "https://martian-flare-704429.postman.co/workspace/My-Workspace~4bee5e97-cd1c-4742-80bf-806d6da67ca2/collection/24380608-8e1886af-d347-4f28-8ca3-9b6b10d06079?action=share&source=collection_link&creator=24380608"
+	},
+	"item": [
+		{
+			"name": "Upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/cesar/Downloads/release-manager.drawio"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9980/",
+					"host": [
+						"localhost"
+					],
+					"port": "9980",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

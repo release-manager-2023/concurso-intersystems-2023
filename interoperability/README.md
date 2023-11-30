@@ -1,7 +1,49 @@
-In the IRIS administration portal, import the production file [Export-concurso_ReleaseManagerProduction-20231129102647.xml](./src/Export-concurso_ReleaseManagerProduction-20231129102647.xml)
+## InterSystems IRIS Interoperability Upload Service
+This is an InterSystems IRIS Interoperability Upload Service to send files to the server using a multipart request from form or http request.
 
-Edit the [provider credentials file](./conf/azureblob) then move to the IRIS docker container
+## What The the service does
 
-```shell
-docker cp azureblob iris:/usr/irissys/mgr
+This application receive a http multipart request with a file and saves to disk 
+
+## Prerequisites
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+
+## Installation: ZPM
+
+Open IRIS Namespace with Interoperability Enabled.
+Open Terminal and call:
+USER>zpm "install upload-service"
+
+## Installation: Docker
+Clone/git pull the repo into any local directory
+
 ```
+$ git clone https://github.com/yurimarx/upload-adapter.git
+```
+
+Open the terminal in this directory and run:
+
+```
+$ docker-compose build
+```
+
+3. Run the IRIS container with your project:
+
+```
+$ docker-compose up -d
+```
+
+## How to Run the Sample
+
+1. Open the [production](http://localhost:52773/csp/irisapp/EnsPortal.ProductionConfig.zen?PRODUCTION=dc.upload.UploadProduction) 
+
+2. Set host destination folder to the uploaded files. See:
+
+<img src="https://github.com/yurimarx/upload-adapter/raw/main/folder.png" alt="folder">
+
+3. Start the production.
+
+4. Now Open Postman or create a multipart request into a form pointing to localhost:9980/ using POST with a form-data file attribute. See sample:
+<img src="https://github.com/yurimarx/upload-adapter/raw/main/postman.png" alt="postman">
+
+
