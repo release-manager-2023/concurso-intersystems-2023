@@ -13,7 +13,7 @@ The team of this project is:
 
 Release Manager is a tool to manage software release to the market using Canary Release methodology.
 
-In context, we’re relying on [InterSystems IRIS Data Platform](https://www.intersystems.com/data-platform/), specifically on the [Interoperability](https://www.intersystems.com/data-platform/interoperability/) capabilities, to give the flexibility and easiness of a no-code approach for integration with cloud storage vendors.
+In this solution, we’re relying on [InterSystems IRIS Data Platform](https://www.intersystems.com/data-platform/), specifically on the [Interoperability](https://www.intersystems.com/data-platform/interoperability/) capabilities, to give the flexibility and easiness of a no-code approach for integration with cloud storage vendors.
 
 We understand Canary Release as defined in [Martin Fowler’s](https://martinfowler.com/) blog from ThoughtWorks called [“Canary Release” by Danilo Sato.](https://martinfowler.com/bliki/CanaryRelease.html)
 
