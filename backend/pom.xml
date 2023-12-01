@@ -42,6 +42,10 @@
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-rest-client-reactive-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-smallrye-openapi</artifactId>
 		</dependency>
 		<dependency>
@@ -101,11 +105,11 @@
 			<artifactId>datafaker</artifactId>
 			<version>2.0.2</version>
 		</dependency>
-	    <dependency>
-	      <groupId>io.quarkiverse.reactivemessaging.http</groupId>
-	      <artifactId>quarkus-reactive-messaging-http</artifactId>
-	      <version>2.0.2</version>
-	    </dependency>
+		<dependency>
+			<groupId>io.quarkiverse.reactivemessaging.http</groupId>
+			<artifactId>quarkus-reactive-messaging-http</artifactId>
+			<version>2.0.2</version>
+		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-junit5</artifactId>

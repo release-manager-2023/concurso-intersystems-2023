@@ -35,6 +35,8 @@ public class NewProductVersionDeliveryService {
 	private DownloadUrlBuilder downloadUrlBuilder;
 	@Inject
 	private VersionLabelFactory versionLabelFactory;
+	@Inject
+	private CloudStorageService cloudStorageService;
 
 	@Transactional
 	public NewProductVersionDeliveryOutputDTO publishNewVersion(Long productId, NewProductVersionDeliveryInputDTO newVersionInputDTO)
@@ -62,7 +64,8 @@ public class NewProductVersionDeliveryService {
 		return version;
 	}
 
-	private Path storeFile(NewProductVersionDeliveryInputDTO newVersionInputDTO, Product product) throws IOException {
+	private Path storeFile(NewProductVersionDeliveryInputDTO newVersionInputDTO, Product product)
+			throws IOException {
 		Path fileDirectory = Path.of(fileRootPath,
 				"productId", product.getId().toString(),
 				"version", product.getVersionString());
@@ -73,6 +76,9 @@ public class NewProductVersionDeliveryService {
 	
 		Files.copy(Paths.get(newVersionInputDTO.getFile().getPath()), fileVersion,
 				StandardCopyOption.COPY_ATTRIBUTES);
+
+		this.cloudStorageService.upload(product.getId(), product.getVersionString(), newVersionInputDTO.getFile());
+
 		return fileVersion;
 	}
 

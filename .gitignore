@@ -93,5 +93,6 @@ Thumbs.db
 # Draw.io
 *.dtmp
 *.bkp
+*.drawio.orig
 
 azureblob
