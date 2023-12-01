@@ -1,57 +1,72 @@
-# Release Manager
+# The Java Backend
 
-Submitted to InterSystems Java Contest 2023
-
-InterSystems [IRIS](https://www.intersystems.com/data-platform/) is a high-performance database that powers transaction processing applications around the world.
-
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses Quarkus, the Supersonic Subatomic Java Framework. A Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## Running the InterSystems IRIS Data Platform
+## Configuration
 
-```shell script
-docker run --rm --name iris -p 1972:1972 -p 52773:52773 intersystemsdc/iris-community:2023.2-zpm
-```
-Open http://localhost:52773/csp/sys/UtilHome.csp to change the password.
+Before start the Java backend, you need to inform what is your IRIS password to it.
 
-```
-Username: SuperUser
-Change password from SYS to admin
-```
+You can provide it on the property `quarkus.datasource.password` in the `application.properties` file located at `src/main/resources`, or the environment variable `QUARKUS_DATASOURCE_PASSWORD` if you use the docker image.
 
-If you need to use another password, you can provide it on the property `quarkus.datasource.password` in the application.properties file located at `src/main/resources`.
-
-## Running the application in dev mode
+## Running the Backend in Dev Mode
 
 ### Prepare dependencies
 
-InterSystems Java technologies are not available on Maven Central, so you need to grab JDBC connectors and other jar files from https://intersystems-community.github.io/iris-driver-distribution/.
+This application was built using [Apache Maven 3.9.5](https://maven.apache.org/download.cgi) and [Java 17](https://javaalmanac.io/jdk/17/).
 
-This project contains the jar files at `src/main/resources/lib`.
+We recommend using [SDK Man](https://sdkman.io/). After installing SDK Man, you can install a Java 17 distribution, Maven and Quarkus CLI.
 
-In order to build this project, go to the `Backend` root folder and type:
+```bash
+sdk install maven
+sdk install java 17.0.8-sem
+sdk install quarkus
 
-```shell script
-mvn install:install-file -Dfile=${PWD}/src/main/resources/lib/intersystems-jdbc-3.7.1.jar -DgroupId=com.intersystems -DartifactId=intersystems-jdbc -Dversion=3.7.1 -Dpackaging=jar
-```
-
-You can run your application in dev mode that enables live coding using:
-
-```shell script
-./mvnw compile quarkus:dev
-```
-
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-Or you can use [SDK Man](https://sdkman.io/) and just run
-```shell script
+#From the backend directory run:
 quarkus dev
 ```
 
-## Packaging and running the application in container
+This project already contains InterSystems jar files needed at `src/main/resources/lib`.
 
-The application can be packaged using:
-```shell script
-./mvnw package -Dquarkus.native.container-build=true
+InterSystems Java technologies are not available on Maven Central, so you need to get JDBC connectors and other jar files from https://intersystems-community.github.io/iris-driver-distribution/.
+
+In order to build this project, go to the `Backend` root folder and type:
+
 ```
+mvn install:install-file -Dfile=${PWD}/src/main/resources/lib/intersystems-jdbc-3.7.1.jar -DgroupId=com.intersystems -DartifactId=intersystems-jdbc -Dversion=3.7.1 -Dpackaging=jar
+```
+
+You can run the application in dev mode using Quarkus CLI:
+
+```bash
+quarkus dev
+```
+
+You can run the application in dev mode using Maven:
+
+```bash
+./mvnw compile quarkus:dev
+```
+
+Quarkus ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/. There, you can explore all extensions and configurations of the application.
+
+## Packaging the application in container
+
+The application can be packaged for containers using:
+
+`./mvnw package -Dquarkus.native.container-build=true`
+
+```bash
+docker run --rm --name release-manager-backend \
+  --network=release-manager-net \
+  -p 8080:8080 \
+  --env QUARKUS_DATASOURCE_JDBC_URL=jdbc:IRIS://release-manager-iris:1972/USER \
+  releasemanager/backend:latest
+```
+
+## Playing with the application
+
+Nether way, by running in dev mode or running the container image, now you can play around with the application by accessing the main page at http://localhost:8080/
+
+There, you will find the notification panel, and a link to the [Swagger-UI](http://localhost:8080/q/swagger-ui/), where you can send HTTP requests and observe the notification panel react using [SSE - Serven-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
