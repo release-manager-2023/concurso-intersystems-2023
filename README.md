@@ -189,10 +189,57 @@ Nether way, by running in dev mode or running the container image, now you can p
 
 There, you will find the notification panel, and a link to the [Swagger-UI](http://localhost:8080/q/swagger-ui/), where you can send HTTP requests and observe the notification panel react using [SSE - Serven-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events).
 
-### Configuring Interoperability
+## InterSystems IRIS Interoperability (Cloud Storage)
+This is an example of interoperability that performs file transfers to a [cloud storage service](https://docs.intersystems.com/healthconnectlatest/csp/docbook/DocBook.UI.Page.cls?KEY=ECLOUD).
 
-In the IRIS administration portal, import the production file [Export-concurso_ReleaseManagerProduction-20231129102647.xml](https://github.com/release-manager-2023/concurso-intersystems-2023/blob/mvp0/interoperability/src/Export-concurso_ReleaseManagerProduction-20231129102647.xml)
+### What this example does
 
-Edit the [provider credentials file](https://github.com/release-manager-2023/concurso-intersystems-2023/blob/mvp0/interoperability/conf/azureblob) then move to the IRIS docker container
+This application receive a http multipart request with a file and saves to Azure Blob 
 
-`docker cp azureblob iris:/usr/irissys/mgr`
+### Prerequisites
+1. Make sure you have [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+
+2. It will also be necessary to have a cloud storage account compatible with IRIS Interoperability, such as Amazon Web Services (AWS), Azure Blob Storage (Azure), or Google Cloud Platform (GCP).
+<img src="../interoperability/docs/assets/azure_blob_conf.png" alt="azure">
+
+### Installation: Docker
+
+1. First, modify the file [cloudstoragecredential](../interoperability/cloudstoragecredential) with the credentials of the cloud storage service, for example using Azure Blob:
+```
+DefaultEndpointsProtocol=https
+AccountName=YOUR_ACCOUNT_NAME
+AccountKey=YOUR_ACCOUNT_KEY
+EndpointSuffix=core.windows.net
+```
+<img src="./interoperability/docs/assets/key_access_azure_blob.png" alt="key_access_azure_blob">
+
+2. Open the terminal in this directory and run:
+
+```
+$ docker-compose build
+```
+
+3. Run the IRIS container with your project:
+
+```
+$ docker-compose up -d
+```
+
+### How to Run the Sample
+
+1. Open the [production](http://localhost:52773/csp/irisapp/EnsPortal.ProductionConfig.zen?PRODUCTION=dc.upload.UploadProduction) in the IRIS Administration Portal (login: SuperUser and password: SYS).
+<img src="./interoperability/docs/assets/login_iris.png" alt="login_iris">
+ 
+2. Start the production.
+<img src="./interoperability/docs/assets/production_start.png" alt="production_start">
+<img src="./interoperability/docs/assets/Interoperability.png" alt="Interoperability">
+
+3. Check the cloud storage configuration in the business operation and ensure that the credentials file is properly selected.
+<img src="./interoperability/docs/assets/cloud_storage_conf.png" alt="cloud storage conf">
+
+
+4. Now Open Postman and create a multipart request into a form-data pointing to localhost:9980/ using verb POST. See sample:
+<img src="./interoperability/docs/assets/postman_request.png" alt="postman">
+
+5. After executing the request, verify if the file has been correctly sent to the previously registered Azure Blob.
+<img src="./interoperability/docs/assets/azure_blob.png" alt="azure">
