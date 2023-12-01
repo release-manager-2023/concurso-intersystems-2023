@@ -11,7 +11,7 @@ The team of this project is:
 
 ## Context
 
-Release Manager is a tool to fit in management of software release to the market using Canary Release methodology.
+Release Manager is a tool to manage software release to the market using Canary Release methodology.
 
 In context, we’re relying on [InterSystems IRIS Data Platform](https://www.intersystems.com/data-platform/), specifically on the [Interoperability](https://www.intersystems.com/data-platform/interoperability/) capabilities, to give the flexibility and easiness of a no-code approach for integration with cloud storage vendors.
 
