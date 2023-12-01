@@ -173,6 +173,7 @@ docker run --rm --name release-manager-backend \
   --network=release-manager-net \
   -p 8080:8080 \
   --env QUARKUS_DATASOURCE_JDBC_URL=jdbc:IRIS://release-manager-iris:1972/USER \
+  --env QUARKUS_DATASOURCE_PASSWORD=yourPassword \
   releasemanager/backend:latest
 ```
 
