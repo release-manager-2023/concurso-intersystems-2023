@@ -191,7 +191,7 @@ This is an example of interoperability that performs file transfers to a [cloud 
 This application receive a http multipart request with a file and saves to Azure Blob 
 
 ### Prerequisites
-1. Make sure you have [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+1. Make sure you have [Docker](https://www.docker.com) installed.
 
 2. It will also be necessary to have a cloud storage account compatible with IRIS Interoperability, such as Amazon Web Services (AWS), Azure Blob Storage (Azure), or Google Cloud Platform (GCP).
 
@@ -199,7 +199,7 @@ This application receive a http multipart request with a file and saves to Azure
 
 ### Installation: Docker
 
-1. First, modify the file [cloudstoragecredential](../interoperability/cloudstoragecredential) with the credentials of the cloud storage service, for example using Azure Blob:
+1. First, modify the file [cloudstoragecredential](./interoperability/cloudstoragecredential) with the credentials of the cloud storage service, for example using Azure Blob:
 ```
 DefaultEndpointsProtocol=https
 AccountName=YOUR_ACCOUNT_NAME
@@ -208,21 +208,11 @@ EndpointSuffix=core.windows.net
 ```
 <img src="./interoperability/docs/assets/key_access_azure_blob.png" alt="key_access_azure_blob">
 
-2. Open the terminal in this directory and run:
-
-```
-$ docker-compose build
-```
-
-3. Run the IRIS container with your project:
-
-```
-$ docker-compose up -d
-```
+2. Make sure you did run steps on [Running the InterSystems IRIS Data Platform](#Running-the-InterSystems-IRIS-Data-Platform) above in this document.
 
 ### How to Run the Sample
 
-1. Open the [production](http://localhost:52773/csp/irisapp/EnsPortal.ProductionConfig.zen?PRODUCTION=dc.upload.UploadProduction) in the IRIS Administration Portal (login: SuperUser and password: SYS).
+1. Open the [production](http://localhost:52773/csp/user/EnsPortal.ProductionConfig.zen) in the IRIS Administration Portal.
 <img src="./interoperability/docs/assets/login_iris.png" alt="login_iris">
  
 2. Start the production.
