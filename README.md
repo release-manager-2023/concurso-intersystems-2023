@@ -193,7 +193,8 @@ This application receive a http multipart request with a file and saves to Azure
 1. Make sure you have [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
 2. It will also be necessary to have a cloud storage account compatible with IRIS Interoperability, such as Amazon Web Services (AWS), Azure Blob Storage (Azure), or Google Cloud Platform (GCP).
-<img src="../interoperability/docs/assets/azure_blob_conf.png" alt="azure">
+
+<img src="./interoperability/docs/assets/azure_blob_conf.png" alt="azure">
 
 ### Installation: Docker
 
