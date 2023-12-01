@@ -1,9 +1,9 @@
-package br.com.releasemanger.product_version.resource;
+package br.com.releasemanger.product_version_delivery.resource;
 
 import java.util.List;
 
-import br.com.releasemanger.product_version.model.vo.ProductVersionDeliveryDTO;
-import br.com.releasemanger.product_version.service.ProductVersionDeliveryService;
+import br.com.releasemanger.product_version_delivery.model.vo.ProductVersionDeliveryDTO;
+import br.com.releasemanger.product_version_delivery.service.ProductVersionDeliveryService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

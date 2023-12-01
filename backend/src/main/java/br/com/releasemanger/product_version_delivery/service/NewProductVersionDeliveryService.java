@@ -1,4 +1,4 @@
-package br.com.releasemanger.product_version.service;
+package br.com.releasemanger.product_version_delivery.service;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,10 +11,10 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import br.com.releasemanger.business_exception.BusinessException;
 import br.com.releasemanger.product.model.entity.Product;
-import br.com.releasemanger.product_version.model.entity.ProductVersionDelivery;
-import br.com.releasemanger.product_version.model.exceptions.MajorVersionCantBePublishedException;
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryInputDTO;
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryOutputDTO;
+import br.com.releasemanger.product_version_delivery.model.entity.ProductVersionDelivery;
+import br.com.releasemanger.product_version_delivery.model.exceptions.MajorVersionCantBePublishedException;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryInputDTO;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryOutputDTO;
 import br.com.releasemanger.version_label.model.vo.VersionLabel;
 import br.com.releasemanger.version_label.service.VersionLabelFactory;
 import br.com.releasemanger.version_status.model.vo.VersionStatusValue;
@@ -35,8 +35,8 @@ public class NewProductVersionDeliveryService {
 	private DownloadUrlBuilder downloadUrlBuilder;
 	@Inject
 	private VersionLabelFactory versionLabelFactory;
-	@Inject
-	private CloudStorageService cloudStorageService;
+//	@Inject
+//	private CloudStorageService cloudStorageService;
 
 	@Transactional
 	public NewProductVersionDeliveryOutputDTO publishNewVersion(Long productId, NewProductVersionDeliveryInputDTO newVersionInputDTO)
@@ -77,7 +77,7 @@ public class NewProductVersionDeliveryService {
 		Files.copy(Paths.get(newVersionInputDTO.getFile().getPath()), fileVersion,
 				StandardCopyOption.COPY_ATTRIBUTES);
 
-		this.cloudStorageService.upload(product.getId(), product.getVersionString(), newVersionInputDTO.getFile());
+//		this.cloudStorageService.upload(product.getId(), product.getVersionString(), newVersionInputDTO.getFile());
 
 		return fileVersion;
 	}

@@ -1,8 +1,8 @@
-package br.com.releasemanger.product_version.service;
+package br.com.releasemanger.product_version_delivery.service;
 
 import java.io.File;
 
-import br.com.releasemanger.product_version.model.entity.ProductVersionDelivery;
+import br.com.releasemanger.product_version_delivery.model.entity.ProductVersionDelivery;
 import jakarta.enterprise.context.Dependent;
 
 @Dependent

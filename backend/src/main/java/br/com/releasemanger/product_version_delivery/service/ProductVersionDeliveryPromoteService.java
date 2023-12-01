@@ -1,9 +1,9 @@
-package br.com.releasemanger.product_version.service;
+package br.com.releasemanger.product_version_delivery.service;
 
 import br.com.releasemanger.product.model.entity.Product;
-import br.com.releasemanger.product_version.model.entity.ProductVersionDelivery;
-import br.com.releasemanger.product_version.model.vo.ChangeProductVersionDeliveryDTO;
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryOutputDTO;
+import br.com.releasemanger.product_version_delivery.model.entity.ProductVersionDelivery;
+import br.com.releasemanger.product_version_delivery.model.vo.ChangeProductVersionDeliveryDTO;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryOutputDTO;
 import br.com.releasemanger.version_status.model.vo.VersionStatusValue;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;

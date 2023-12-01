@@ -1,8 +1,8 @@
-package br.com.releasemanger.product_version.service;
+package br.com.releasemanger.product_version_delivery.service;
 
 import static br.com.releasemanger.version_status.model.vo.VersionStatusNotificationChannel.VERSION_STATUS_NOTIFICATION;
 
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryOutputDTO;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryOutputDTO;
 import io.vertx.core.eventbus.EventBus;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;

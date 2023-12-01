@@ -1,6 +1,6 @@
 package br.com.releasemanger.version_label.service;
 
-import br.com.releasemanger.product_version.model.exceptions.MajorVersionCantBePublishedException;
+import br.com.releasemanger.product_version_delivery.model.exceptions.MajorVersionCantBePublishedException;
 import br.com.releasemanger.version_label.model.vo.VersionLabel;
 import jakarta.enterprise.context.ApplicationScoped;
 

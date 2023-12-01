@@ -1,4 +1,4 @@
-package br.com.releasemanger.product_version.model.vo;
+package br.com.releasemanger.product_version_delivery.model.vo;
 
 import java.io.File;
 

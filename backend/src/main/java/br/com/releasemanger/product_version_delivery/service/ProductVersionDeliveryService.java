@@ -1,10 +1,10 @@
-package br.com.releasemanger.product_version.service;
+package br.com.releasemanger.product_version_delivery.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.releasemanger.product_version.model.entity.ProductVersionDelivery;
-import br.com.releasemanger.product_version.model.vo.ProductVersionDeliveryDTO;
+import br.com.releasemanger.product_version_delivery.model.entity.ProductVersionDelivery;
+import br.com.releasemanger.product_version_delivery.model.vo.ProductVersionDeliveryDTO;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 

@@ -1,8 +1,8 @@
-package br.com.releasemanger.product_version.resource;
+package br.com.releasemanger.product_version_delivery.resource;
 
 import java.io.File;
 
-import br.com.releasemanger.product_version.service.ProductVersionDeliveryArtifactDownloadService;
+import br.com.releasemanger.product_version_delivery.service.ProductVersionDeliveryArtifactDownloadService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

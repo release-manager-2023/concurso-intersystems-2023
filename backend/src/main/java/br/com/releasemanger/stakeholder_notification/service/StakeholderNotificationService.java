@@ -6,7 +6,7 @@ import static br.com.releasemanger.version_status.model.vo.VersionStatusNotifica
 import java.time.LocalDateTime;
 import java.util.List;
 
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryOutputDTO;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryOutputDTO;
 import br.com.releasemanger.stakeholder_notification.model.entity.Stakeholder;
 import br.com.releasemanger.stakeholder_notification.model.vo.StakeholderNotificationDTO;
 import io.quarkus.vertx.ConsumeEvent;

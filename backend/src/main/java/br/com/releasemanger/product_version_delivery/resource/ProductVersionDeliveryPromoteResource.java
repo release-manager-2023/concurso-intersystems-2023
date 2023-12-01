@@ -1,7 +1,7 @@
-package br.com.releasemanger.product_version.resource;
+package br.com.releasemanger.product_version_delivery.resource;
 
-import br.com.releasemanger.product_version.model.vo.ChangeProductVersionDeliveryDTO;
-import br.com.releasemanger.product_version.service.ProductVersionDeliveryPromoteService;
+import br.com.releasemanger.product_version_delivery.model.vo.ChangeProductVersionDeliveryDTO;
+import br.com.releasemanger.product_version_delivery.service.ProductVersionDeliveryPromoteService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.PUT;

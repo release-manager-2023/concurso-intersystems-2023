@@ -1,4 +1,4 @@
-package br.com.releasemanger.product_version.model.entity;
+package br.com.releasemanger.product_version_delivery.model.entity;
 
 import java.time.LocalDateTime;
 

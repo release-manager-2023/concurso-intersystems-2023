@@ -1,9 +1,9 @@
-package br.com.releasemanger.product_version.resource;
+package br.com.releasemanger.product_version_delivery.resource;
 
 import java.io.IOException;
 
-import br.com.releasemanger.product_version.model.vo.NewProductVersionDeliveryInputDTO;
-import br.com.releasemanger.product_version.service.NewProductVersionDeliveryService;
+import br.com.releasemanger.product_version_delivery.model.vo.NewProductVersionDeliveryInputDTO;
+import br.com.releasemanger.product_version_delivery.service.NewProductVersionDeliveryService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
