@@ -199,7 +199,7 @@ This application receive a http multipart request with a file and saves to Azure
 
 ### Installation: Docker
 
-1. First, modify the file [cloudstoragecredential](../interoperability/cloudstoragecredential) with the credentials of the cloud storage service, for example using Azure Blob:
+1. First, modify the file [cloudstoragecredential](./interoperability/cloudstoragecredential) with the credentials of the cloud storage service, for example using Azure Blob:
 ```
 DefaultEndpointsProtocol=https
 AccountName=YOUR_ACCOUNT_NAME
@@ -208,11 +208,11 @@ EndpointSuffix=core.windows.net
 ```
 <img src="./interoperability/docs/assets/key_access_azure_blob.png" alt="key_access_azure_blob">
 
-2. Make sure you did run steps on [Running the InterSystems IRIS Data Platform](#Running%20the%20InterSystems%20IRIS%20Data%20Platform) above in this document.
+2. Make sure you did run steps on [Running the InterSystems IRIS Data Platform](#Running-the-InterSystems-IRIS-Data-Platform) above in this document.
 
 ### How to Run the Sample
 
-1. Open the [production](http://localhost:52773/csp/irisapp/EnsPortal.ProductionConfig.zen?PRODUCTION=dc.upload.UploadProduction) in the IRIS Administration Portal (login: SuperUser and password: SYS).
+1. Open the [production](http://localhost:52773/csp/user/EnsPortal.ProductionConfig.zen) in the IRIS Administration Portal.
 <img src="./interoperability/docs/assets/login_iris.png" alt="login_iris">
  
 2. Start the production.
