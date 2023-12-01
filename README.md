@@ -191,7 +191,7 @@ This is an example of interoperability that performs file transfers to a [cloud 
 This application receive a http multipart request with a file and saves to Azure Blob 
 
 ### Prerequisites
-1. Make sure you have [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+1. Make sure you have [Docker](https://www.docker.com) installed.
 
 2. It will also be necessary to have a cloud storage account compatible with IRIS Interoperability, such as Amazon Web Services (AWS), Azure Blob Storage (Azure), or Google Cloud Platform (GCP).
 
@@ -208,17 +208,7 @@ EndpointSuffix=core.windows.net
 ```
 <img src="./interoperability/docs/assets/key_access_azure_blob.png" alt="key_access_azure_blob">
 
-2. Open the terminal in this directory and run:
-
-```
-$ docker-compose build
-```
-
-3. Run the IRIS container with your project:
-
-```
-$ docker-compose up -d
-```
+2. Make sure you did run steps on [Running the InterSystems IRIS Data Platform](#Running%20the%20InterSystems%20IRIS%20Data%20Platform) above in this document.
 
 ### How to Run the Sample
 
