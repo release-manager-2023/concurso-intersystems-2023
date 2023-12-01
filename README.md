@@ -168,14 +168,7 @@ The application can be packaged for containers using:
 
 `./mvnw package -Dquarkus.native.container-build=true`
 
-## Running the image already built
-
-If you don’t want or can’t run in dev mode, we conveniently placed a docker image inside the code repository. Follow these steps to get the stack up and running.
-
-Go to the `run` folder at the root directory of this project:
-
 ```bash
-docker load < release-manager-backend.tar
 docker run --rm --name release-manager-backend \
   --network=release-manager-net \
   -p 8080:8080 \
