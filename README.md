@@ -166,7 +166,7 @@ Quarkus ships with a Dev UI, which is available in dev mode only at http://loca
 
 The application can be packaged for containers using:
 
-`./mvnw package -Dquarkus.native.container-build=true`
+`./mvnw package -Dquarkus.container-image.build=true`
 
 ```bash
 docker run --rm --name release-manager-backend \
