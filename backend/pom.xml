@@ -8,7 +8,7 @@
 	<artifactId>release-manager</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
-		<compiler-plugin.version>3.11.0</compiler-plugin.version>
+		<compiler-plugin.version>3.12.1</compiler-plugin.version>
 		<liquibase-iris.version>1.0.0</liquibase-iris.version>
 		<lombok.version>1.18.30</lombok.version>
 		<maven.compiler.release>17</maven.compiler.release>
@@ -16,9 +16,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
 		<quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-		<quarkus.platform.version>3.5.3</quarkus.platform.version>
+		<quarkus.platform.version>3.7.1</quarkus.platform.version>
 		<skipITs>true</skipITs>
-		<surefire-plugin.version>3.1.2</surefire-plugin.version>
+		<surefire-plugin.version>3.2.3</surefire-plugin.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -108,7 +108,7 @@
 		<dependency>
 			<groupId>io.quarkiverse.reactivemessaging.http</groupId>
 			<artifactId>quarkus-reactive-messaging-http</artifactId>
-			<version>2.0.2</version>
+			<version>2.0.3</version>
 		</dependency>
 		<dependency>
 			<groupId>io.quarkus</groupId>
